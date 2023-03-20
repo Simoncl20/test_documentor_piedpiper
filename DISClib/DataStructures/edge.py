@@ -1,4 +1,5 @@
 """
+ # TODO cambiar comentarios de lincencia segun estandard del equipo
  * Copyright 2020, Departamento de sistemas y Computación,
  * Universidad de Los Andes
  *
@@ -21,7 +22,9 @@
  * Contribución de:
  * Darío Correal
  """
-
+ 
+# FIXME agregar el manejo de excepciones de la libreria
+# TODO crear consistencia en para importar modulos
 import config
 assert config
 
@@ -32,10 +35,13 @@ Este código está basado en las implementaciones propuestas en:
 """
 
 
+# FIXME cambiar a SnakeCase el formato de funciones y variables
+# TODO agregar anotaciones para documentacion automatica
 def newEdge(va, vb, weight=0):
     """
     Crea un nuevo arco entrelos vertices va y vb
     """
+    # FIXME cambiar por datatruct nativo de python
     edge = {'vertexA': va,
             'vertexB': vb,
             'weight': weight
@@ -47,6 +53,9 @@ def weight(edge):
     """
     Retorna el peso de un arco
     """
+    # FIXME falta agregar el manejo de excepciones
+    # FIXME ajustar comportamiento de edge segun funciones dict()
+    # TODO agregar tipos de datos para input y output
     return edge['weight']
 
 
@@ -54,6 +63,9 @@ def either(edge):
     """
     Retorna el vertice A del arco
     """
+    # FIXME falta agregar el manejo de excepciones
+    # FIXME ajustar comportamiento de edge segun funciones dict()
+    # TODO agregar tipos de datos para input y output
     return edge['vertexA']
 
 
@@ -61,6 +73,10 @@ def other(edge, veither):
     """
     Retorna el vertice B del arco
     """
+    # FIXME falta agregar el manejo de excepciones
+    # FIXME ajustar comportamiento de edge segun funciones dict()
+    # TODO agregar tipos de datos para input y output
+    # TODO mejorar documentacion para entender el funcionamiento
     if (veither == edge['vertexA']):
         return edge['vertexB']
     elif (veither == edge['vertexB']):
@@ -71,6 +87,10 @@ def compareedges(edge1, edge2):
     """
     Compara dos arcos y retorna True si son iguales
     """
+    # FIXME falta agregar el manejo de excepciones
+    # FIXME ajustar comportamiento de edge segun funciones dict()
+    # TODO agregar tipos de datos para input y output
+    # TODO mejorar documentacion para entender el funcionamiento
     e1v = either(edge1)
     e2v = either(edge2)
 

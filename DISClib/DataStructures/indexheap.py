@@ -1,4 +1,5 @@
 """
+ # TODO cambiar comentarios de lincencia segun estandard del equipo
  * Copyright 2020, Departamento de sistemas y Computación,
  * Universidad de Los Andes
  *
@@ -20,6 +21,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  """
 
+# TODO crear consistencia en para importar modulos
 from DISClib.ADT import map as map
 from DISClib.ADT import list as lt
 from DISClib.Utils import error as error
@@ -30,6 +32,8 @@ orientada a menor
 """
 
 
+# FIXME cambiar a SnakeCase el formato de funciones y variables
+# TODO agregar anotaciones para documentacion automatica
 def newIndexHeap(cmpfunction):
     """
     Crea un cola de prioridad indexada orientada a menor
@@ -43,18 +47,23 @@ def newIndexHeap(cmpfunction):
         Exception
     """
     try:
+        # FIXME cambiar por datatruct nativo de python
         indexheap = {'elements': None,
                      'qpMap': None,
                      'size': 0,
                      'cmpfunction': cmpfunction}
+        # FIXME ajustar comportamiento segun actualizaciones del ADT List
+        # TODO dejar variables por defecto como constantes del modulo
         indexheap['elements'] = lt.newList(datastructure='ARRAY_LIST',
                                            cmpfunction=cmpfunction)
+        # FIXME ajustar comportamiento segun actualizaciones del ADT map
         indexheap['qpMap'] = map.newMap(
                                         maptype='PROBING',
                                         comparefunction=cmpfunction
                                         )
         return indexheap
     except Exception as exp:
+        # FIXME ajustar mensaje segun actualizaciones del modulo error
         error.reraise(exp, 'indexheap:newindexheap')
 
 
@@ -69,6 +78,9 @@ def insert(iheap, key, index):
     Raises:
         Exception
     """
+    # TODO revisar si es necesario el return
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         if not map.contains(iheap['qpMap'], key):
             iheap['size'] += 1
@@ -92,6 +104,8 @@ def isEmpty(iheap):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         return iheap['size'] == 0
     except Exception as exp:
@@ -109,6 +123,8 @@ def size(iheap):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         return iheap['size']
     except Exception as exp:
@@ -126,6 +142,8 @@ def contains(iheap, key):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         return map.contains(iheap['qpMap'], key)
     except Exception as exp:
@@ -143,6 +161,8 @@ def min(iheap):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         if(iheap['size'] > 0):
             minIdx = lt.getElement(iheap['elements'], 1)
@@ -164,6 +184,9 @@ def delMin(iheap):
     Raises:
         Exception
     """
+    # TODO revisar si es necesario el return
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         if (iheap['size'] > 0):
             minIdx = lt.getElement(iheap['elements'], 1)
@@ -190,6 +213,8 @@ def decreaseKey(iheap, key, newindex):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         val = map.get(iheap['qpMap'], key)
         elem = lt.getElement(iheap['elements'], val['value'])
@@ -214,6 +239,8 @@ def increaseKey(iheap, key, newindex):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         val = map.get(iheap['qpMap'], key)
         elem = lt.getElement(iheap['elements'], val['value'])
@@ -234,6 +261,8 @@ def exchange(iheap, i, j):
     """
     Intercambia los elementos en las posiciones i y j del heap
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         element_i = lt.getElement(iheap['elements'], i)
         element_j = lt.getElement(iheap['elements'], j)
@@ -250,6 +279,8 @@ def greater(iheap, parent, element):
     Indica si el index de parent es mayor
     que index de element
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         return parent['index'] > element['index']
     except Exception as exp:
@@ -270,6 +301,8 @@ def swim(iheap, pos):
     Raises:
         Exception
     """
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         while (pos > 1):
             posparent = int((pos/2))
@@ -296,6 +329,9 @@ def sink(iheap, pos):
     Raises:
         Exception
     """
+    # FIXME revisar si es necesario el break
+    # TODO agregar tipos de datos para input y output
+    # FIXME ajustar mensaje segun actualizaciones del modulo error
     try:
         size = iheap['size']
         while ((2*pos <= size)):
