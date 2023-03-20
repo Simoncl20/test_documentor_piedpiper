@@ -91,6 +91,7 @@ def compareedges(edge1, edge2):
     # FIXME ajustar comportamiento de edge segun funciones dict()
     # TODO agregar tipos de datos para input y output
     # TODO mejorar documentacion para entender el funcionamiento
+
     e1v = either(edge1)
     e2v = either(edge2)
 
