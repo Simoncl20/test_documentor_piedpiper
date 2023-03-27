@@ -36,7 +36,12 @@ assert config
   cola (Queue) sobre una lista.
 """
 
+#* TODOs GENERALES *#
+#TODO: Especifiar los tipos de errores que se pueden presentar en lugar de Exception
+#TODO: Actualizar las pruebas unitarias luego de realizar los cambios
 
+
+#TODO: Agregar documentación con las posibles estructuras de datos que se pueden utilizar para implementar la cola
 def newQueue(datastructure='SINGLE_LINKED'):
     """ Crea una cola vacia basada en una lista.
     Args:
@@ -52,7 +57,9 @@ def newQueue(datastructure='SINGLE_LINKED'):
     except Exception as exp:
         error.reraise(exp, 'TADQueue->newQueue: ')
 
-
+#FIXME: Cambiar "pila" por "cola" en la documentación
+#FIXME: Cambiar el mensaje de error para que sea consistente con los demás mensajes de error
+#TODO: Mejorar la documentación del output de la función
 def enqueue(queue, element):
     """Agrega el elemento element en el tope de la pila
     Args:
@@ -70,7 +77,7 @@ def enqueue(queue, element):
     except Exception as ex:
         error.reraise(ex, 'enqueue ')
 
-
+#FIXME: Cambiar la descripción para decir qué hace y no qué retorna
 def dequeue(queue):
     """ Retorna el elemento en la primer posición de la cola, y lo elimina.
      Args:
@@ -84,9 +91,10 @@ def dequeue(queue):
     try:
         return lt.removeFirst(queue)
     except Exception as exp:
-        error.reraise(exp, 'TADQueue->dequeue: ')
+        error.reraise(exp, 'eTADQueu->dequeue: ')
 
-
+#FIXME: Cambiar la descripción para decir qué hace y no qué retorna
+#FIXME: El return de la función no es consistente con la documentación (True o el elemento)
 def peek(queue):
     """ Retorna el elemento en la primer posición de la cola sin eliminarlo
     Args:
@@ -102,7 +110,7 @@ def peek(queue):
     except Exception as exp:
         error.reraise(exp, 'TADQueue->isEmpty: ')
 
-
+#FIXME: Cambiar el nombre de la función para que siga los lineamientos de estilo de código de Python
 def isEmpty(queue):
     """Informa si la cola es vacía o no
     Args:

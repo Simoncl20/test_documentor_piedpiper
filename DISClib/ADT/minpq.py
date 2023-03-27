@@ -38,7 +38,12 @@ propuesta por R.Sedgewick y Kevin Wayne en su libro
 Algorithms, 4th Edition
 """
 
+#* TODOs GENERALES *#
+#TODO: Especifiar los tipos de errores que se pueden presentar en lugar del error base: Exception
+#TODO: Actualizar las pruebas unitarias luego de realizar los cambios
 
+#FIXME: El return es un Heap pero la documentación dice que es un MinPQ, aunque sean lo mismo al inicio, debe haber consistencia 
+#FIXME: Cambiar el nombre de la función para que siga los lineamientos de estilo de código de Python
 def newMinPQ(cmpfunction):
     """
     Crea un cola de prioridad orientada a menor
@@ -75,7 +80,8 @@ def size(minpq):
     except Exception as exp:
         error.reraise(exp, 'minpq:size')
 
-
+#FIXME: Cambiar el nombre de la función para que siga los lineamientos de estilo de código de Python
+#TODO: Dado que el tipo de retorno es un tipo primario boolean, especificar en la función el tipo de retorno
 def isEmpty(minpq):
     """
     Indica si la MinPQ está vacía
@@ -129,7 +135,7 @@ def insert(minpq, element):
     except Exception as exp:
         error.reraise(exp, 'minpq:insert')
 
-
+#FIXME: Cambiar el nombre de la función para que siga los lineamientos de estilo de código de Python
 def delMin(minpq):
     """
     Retorna el menor elemento de la MinPQ y lo elimina.
