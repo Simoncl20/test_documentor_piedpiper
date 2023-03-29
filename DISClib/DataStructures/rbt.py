@@ -45,7 +45,11 @@ Algorithms, 4th Edition
 #                     API  RBT
 # ________________________________________________________________________
 
+# GENERAL
+#FIXME Cambiar todas las funciones y variables al formato snake_case
+#TODO Explicar más a profundidad que tipo de excepciones y errores puede generar cada función
 
+#FIXME Agregar todos los parámetros a la documentación
 def newMap(omaptype, cmpfunction, datastructure):
     """
     Crea una tabla de simbolos ordenada.
@@ -69,6 +73,7 @@ def newMap(omaptype, cmpfunction, datastructure):
 
         return rbt
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:NewMap')
 
 
@@ -90,9 +95,11 @@ def put(rbt, key, value):
         rbt['root']['color'] = node.BLACK
         return rbt
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'Bst:Put')
 
-
+#FIXME Corregir errores de ortografía en la documentación
+#TODO Indicar que retorna un rbtnode
 def get(rbt, key):
     """
     Retorna la pareja llave, valor, cuya llave sea igual a key.
@@ -108,9 +115,10 @@ def get(rbt, key):
     try:
         return getNode(rbt['root'], key, rbt['cmpfunction'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBR:get')
 
-
+#TODO Modificar documentación para que quede del mismo formato que las otras funciones
 def remove(rbt, key):
     """
     Elimina la pareja llave,valor, donde llave == key.
@@ -132,6 +140,7 @@ def remove(rbt, key):
             rbt['root']['color'] = node.BLACK
         return rbt
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBR:remove')
 
 
@@ -155,6 +164,7 @@ def contains(rbt, key):
         else:
             return (get(rbt, key) is not None)
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT: contains')
 
 
@@ -171,6 +181,7 @@ def size(rbt):
     try:
         return sizeTree(rbt['root'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'Bst:size')
 
 
@@ -187,9 +198,10 @@ def isEmpty(rbt):
     try:
         return (rbt['root'] is None)
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'Bst:isempty')
 
-
+#TODO Indicar que retorna una lista de DISCLib
 def keySet(rbt):
     """
     Retorna una lista con todas las llaves de la tabla
@@ -205,9 +217,10 @@ def keySet(rbt):
         klist = keySetTree(rbt['root'], klist)
         return klist
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:KeySet')
 
-
+#TODO Indicar que retorna una lista de DISCLib
 def valueSet(rbt):
     """
     Construye una lista con los valores de la tabla
@@ -223,9 +236,10 @@ def valueSet(rbt):
         vlist = valueSetTree(rbt['root'], vlist)
         return vlist
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:valueSet')
 
-
+#FIXME Manejar de alguna manera las excepciones
 def minKey(rbt):
     """
     Retorna la menor llave de la tabla de simbolos
@@ -241,7 +255,7 @@ def minKey(rbt):
         minkey = minKeyTree(rbt['root'])['key']
     return minkey
 
-
+#FIXME Manejar de alguna manera las excepciones
 def maxKey(rbt):
     """
     Retorna la mayor llave de la tabla de simbolos
@@ -282,6 +296,7 @@ def deleteMin(rbt):
         rbt['root'] = root
         return rbt
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:deleteMin')
 
 
@@ -310,6 +325,7 @@ def deleteMax(rbt):
         rbt['root'] = root
         return rbt
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:deleteMin')
 
 
@@ -331,6 +347,7 @@ def floor(rbt, key):
             return node['key']
         return node
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:floor')
 
 
@@ -352,6 +369,7 @@ def ceiling(rbt, key):
             return node['key']
         return node
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:ceiling')
 
 
@@ -372,9 +390,10 @@ def select(rbt, pos):
             return node['key']
         return node
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:Select')
 
-
+#FIXME Corregir errores de ortografia en documentación
 def rank(rbt, key):
     """
     Retorna el número de llaves en la tabla estrictamente menores que key
@@ -389,6 +408,7 @@ def rank(rbt, key):
     try:
         return rankKeys(rbt['root'], key, rbt['cmpfunction'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:rank')
 
 
@@ -406,9 +426,11 @@ def height(rbt):
     try:
         return heightTree(rbt['root'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:height')
 
-
+#FIXME Cambiar nombre de parámetros en la documentación
+#TODO Indicar que retorna una lista de DISCLib
 def keys(rbt, keylo, keyhi):
     """
     Retorna todas las llaves del arbol que se encuentren entre
@@ -428,9 +450,11 @@ def keys(rbt, keylo, keyhi):
                             rbt['cmpfunction'])
         return lstkeys
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:keys')
 
-
+#FIXME Cambiar nombre de parámetros en la documentación
+#TODO Indicar que retorna una lista de DISCLib
 def values(rbt, keylo, keyhi):
     """
     Retorna todas los valores del arbol que se encuentren entre
@@ -451,6 +475,7 @@ def values(rbt, keylo, keyhi):
                                 rbt['cmpfunction'])
         return lstvalues
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:Values')
 
 
@@ -458,7 +483,7 @@ def values(rbt, keylo, keyhi):
 #       Funciones Helper
 # _____________________________________________________________________________
 
-
+#FIXME Corregir errores ortografía documentación
 def valueSetTree(root, klist):
     """
     Construye una lista con los valorers de la tabla
@@ -477,6 +502,7 @@ def valueSetTree(root, klist):
             valueSetTree(root['right'], klist)
         return klist
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:valueSetTree')
 
 
@@ -498,9 +524,10 @@ def keySetTree(root, klist):
             keySetTree(root['right'], klist)
         return klist
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:keySetTree')
 
-
+#FIXME Documentar igual que las otras funciones
 def rotateLeft(rbt):
     """
     rotación izquierda para compensar dos enlaces rojos consecutivos
@@ -515,8 +542,8 @@ def rotateLeft(rbt):
         rbt['size'] = sizeTree(rbt['left']) + sizeTree(rbt['right']) + 1
         return x
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:rotateLeft')
-
 
 def rotateRight(rbt):
     """
@@ -538,6 +565,7 @@ def rotateRight(rbt):
         rbt['size'] = sizeTree(rbt['left']) + sizeTree(rbt['right']) + 1
         return x
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:rotateRight')
 
 
@@ -558,9 +586,10 @@ def flipNodeColor(rbnode):
             else:
                 rbnode['color'] = node.RED
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:flipNodeColors')
 
-
+#FIXME Corregir documentación de los parámetros
 def flipColors(rbnode):
     """
     Cambia el color de un nodo y de sus dos hijos
@@ -577,9 +606,10 @@ def flipColors(rbnode):
         flipNodeColor(rbnode['left'])
         flipNodeColor(rbnode['right'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:flipColors')
 
-
+#TODO Documentar el retorno de manera más clara
 def isRed(rbnode):
     """
     Indica si un nodo del arbol es rojo
@@ -596,6 +626,7 @@ def isRed(rbnode):
         else:
             return (rbnode['color'] == node.RED)
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:isRed')
 
 
@@ -615,6 +646,7 @@ def sizeTree(root):
         else:
             return root['size']
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:sizeTree')
 
 
@@ -660,6 +692,7 @@ def insertNode(root, key, value, comparefunction):
 
         return root
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:insertNode')
 
 
@@ -680,9 +713,10 @@ def heightTree(root):
         else:
             return 1 + max(heightTree(root['left']), heightTree(root['right']))
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:heightTree')
 
-
+#FIXME Cambiar comparefunction a cmpfunction
 def getNode(root, key, comparefunction):
     """
     Retorna la pareja llave, valor, cuya llave sea igual a key.
@@ -710,9 +744,10 @@ def getNode(root, key, comparefunction):
         return element
 
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:getNode')
 
-
+#FIXME Cambiar nombre de la función, ya que esta retorna un nodo, no un árbol
 def minKeyTree(root):
     """
     Retorna la menor llave de la tabla de simbolos
@@ -732,9 +767,11 @@ def minKeyTree(root):
                 min = minKeyTree(root['left'])
         return min
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:minKeyNode')
 
-
+#FIXME Cambiar documentación parámetros
+#FIXME Cambiar nombre de la función, ya que esta retorna un nodo, no un árbol
 def maxKeyTree(root):
     """
     Retorna la mayor llave de la tabla de simbolos
@@ -754,9 +791,11 @@ def maxKeyTree(root):
                 max = maxKeyTree(root['right'])
         return max
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:maxKeyNode')
 
-
+#FIXME Escribir bien los nombres de los parámetros en la documentación
+#FIXME Corregir la documentación del retorno
 def floorKey(root, key, cmpfunction):
     """
     Retorna la llave mas grande en la tabla de simbolos, menor o
@@ -785,9 +824,11 @@ def floorKey(root, key, cmpfunction):
                 return root
         return root
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:floorKey')
 
-
+#FIXME Escribir bien los nombres de los parámetros en la documentación
+#FIXME Corregir la documentación del retorno
 def ceilingKey(root, key, cmpfunction):
     """
     Retorna la llave mas pequeña en la tabla de simbolos,
@@ -816,9 +857,10 @@ def ceilingKey(root, key, cmpfunction):
             return ceilingKey(root['right'], key, cmpfunction)
         return None
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:ceilingKey')
 
-
+#FIXME Documentar de manera correcta los parámetros
 def rankKeys(root, key, comparefunction):
     """
     Retorna el número de llaves en la tabla estrictamente menores que key
@@ -843,9 +885,11 @@ def rankKeys(root, key, comparefunction):
         else:
             return sizeTree(root['left'])
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:ranKeys')
 
-
+#FIXME Documentar de manera correcta los parámetros
+#TODO Indicar que retorna una lista de DISCLib
 def keysRange(root, keylo, keyhi, lstkeys, cmpfunction):
     """
     Retorna todas las llaves del arbol en un rango dado
@@ -871,9 +915,12 @@ def keysRange(root, keylo, keyhi, lstkeys, cmpfunction):
                 keysRange(root['right'], keylo, keyhi, lstkeys, cmpfunction)
         return lstkeys
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:keysRange')
 
-
+#FIXME Documentar de manera correcta los parámetros
+#FIXME Corregir documentación del retorno
+#TODO Indicar que retorna una lista de DISCLib
 def valuesRange(root, keylo, keyhi, lstvalues, cmpfunction):
     """
     Retorna todas los valores del arbol en un rango dado por
@@ -902,9 +949,10 @@ def valuesRange(root, keylo, keyhi, lstvalues, cmpfunction):
                             cmpfunction)
         return lstvalues
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:valuesrange')
 
-
+#FIXME Modificar documentación de retorno
 def selectKey(root, key):
     """
     Retorna la siguiente llave a la k-esima llave mas pequeña de la tabla
@@ -927,9 +975,10 @@ def selectKey(root, key):
                 return root
         return root
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'BST:selectKey')
 
-
+#TODO Específicar cuales son los parámetros en la documentación
 def deleteMinTree(root):
     """
     Encuentra y remueve la menor  llave de la tabla de simbolos
@@ -951,9 +1000,11 @@ def deleteMinTree(root):
         return root
 
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:deleteMinTree')
 
-
+#FIXME Corregir documentación de retorno
+#TODO Específicar cuales son los parámetros en la documentación
 def deleteMaxTree(root):
     """
     Encuentra y remueve la mayor llave de la tabla de simbolos
@@ -982,9 +1033,10 @@ def deleteMaxTree(root):
         return root
 
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:deleteMinTree')
 
-
+#TODO Específicar cuales son los parámetros en la documentación
 def moveRedRight(root):
     """
     Cambio de color durante el proceso de eliminacion
@@ -1001,9 +1053,10 @@ def moveRedRight(root):
             flipColors(root)
         return root
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:moveRedLeft')
 
-
+#TODO Específicar cuales son los parámetros en la documentación
 def moveRedLeft(root):
     """
     Cambio de color durante el proceso de eliminacion
@@ -1021,9 +1074,10 @@ def moveRedLeft(root):
             flipColors(root)
         return root
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:moveRedLeft')
 
-
+#TODO Específicar cuales son los parámetros en la documentación
 def balance(root):
     """
     Balancea el arbol
@@ -1050,9 +1104,10 @@ def balance(root):
         return root
 
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:moveRedLeft')
 
-
+#TODO Modificar documentación para que siga el mismo formato que las demás funciones
 def removeKey(root, key, cmpfunction):
     """
     Elimina la pareja llave,valor, donde llave == key.
@@ -1094,9 +1149,10 @@ def removeKey(root, key, cmpfunction):
         return root
 
     except Exception as exp:
+        #FIXME Modificar nombre del error para que sea más claro.
         error.reraise(exp, 'RBT:removeKey')
 
-
+#FIXME Agregar documentación
 def defaultfunction(key1, key2):
     if key1 == key2:
         return 0

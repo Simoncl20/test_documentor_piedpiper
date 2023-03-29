@@ -42,7 +42,11 @@ Este código está basado en las implementaciones propuestas en:
 - Data Structures and Algorithms in Java, 6th Edition.  Michael Goodrich
 """
 
+# GENERAL
+#FIXME Cambiar todas las funciones y variables al formato snake_case
+#TODO Explicar más a profundidad que tipo de excepciones y errores puede generar cada función
 
+#FIXME Modificar documentación relacionada a numelements
 def newMap(numelements, prime, loadfactor, cmpfunction, datastructure):
     """Crea una tabla de simbolos (map) sin orden
 
@@ -66,6 +70,7 @@ def newMap(numelements, prime, loadfactor, cmpfunction, datastructure):
         capacity = nextPrime(numelements//loadfactor)
         scale = rd.randint(1, prime-1)
         shift = rd.randint(0, prime-1)
+        #FIXME Cambiar por dataclass para facilitar su modelado y manejo errores
         hashtable = {'prime': prime,
                      'capacity': capacity,
                      'scale': scale,
@@ -89,6 +94,7 @@ def newMap(numelements, prime, loadfactor, cmpfunction, datastructure):
             lt.addLast(hashtable['table'], entry)
         return hashtable
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:newMap')
 
 
@@ -118,9 +124,10 @@ def put(map, key, value):
             rehash(map)
         return map
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:put')
 
-
+#TODO Indicar en el retorno cuando es True y cuando es False, similar a la documentación de isEmpty
 def contains(map, key):
     """ Retorna True si la llave key se encuentra en el map
         o False en caso contrario.
@@ -141,9 +148,10 @@ def contains(map, key):
         else:
             return False
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:contains')
 
-
+#TODO Indicar que la pareja llave valor es un mapentry
 def get(map, key):
     """ Retorna la pareja llave, valor, cuya llave sea igual a key
     Args:
@@ -164,9 +172,10 @@ def get(map, key):
         else:
             return None
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:get')
 
-
+#TODO Modificar documentación para que sea similar a la de las demás funciones
 def remove(map, key):
     """ Elimina la pareja llave,valor, donde llave == key.
     Args:
@@ -187,6 +196,7 @@ def remove(map, key):
             map['size'] -= 1
         return map
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:remove')
 
 
@@ -202,6 +212,7 @@ def size(map):
     try:
         return map['size']
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:size')
 
 
@@ -224,9 +235,10 @@ def isEmpty(map):
                 break
         return empty
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:isEmpty')
 
-
+#TODO indicar que la lista retornada es de la librería DISCLib
 def keySet(map):
     """
     Retorna una lista con todas las llaves de la tabla de hash
@@ -246,9 +258,10 @@ def keySet(map):
                 lt.addLast(ltset, entry['key'])
         return ltset
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:keyset')
 
-
+#TODO indicar que la lista retornada es de la librería DISCLib
 def valueSet(map):
     """
     Retorna una lista con todos los valores de la tabla de hash
@@ -268,6 +281,7 @@ def valueSet(map):
                 lt.addLast(ltset, entry['value'])
         return ltset
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:valueset')
 
 
@@ -275,7 +289,7 @@ def valueSet(map):
 #       Helper Functions
 # __________________________________________________________________
 
-
+#FIXME Agregar parametros, retorno y excepciones en la documentación.
 def hashValue(table, key):
     """
     Calcula un hash para una llave, utilizando el método
@@ -294,9 +308,10 @@ def hashValue(table, key):
         value = int((abs(a*h + b) % p) % m) + 1
         return value
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:hashvalue')
 
-
+#FIXME Añadir retorno y manejo de excepciones en la documentación
 def findSlot(map, key, hashvalue, cmpfunction):
     """
     Encuentra una posición libre en la tabla de hash.
@@ -325,9 +340,10 @@ def findSlot(map, key, hashvalue, cmpfunction):
             searchpos = (((searchpos) % map['capacity'])+1)
         return -(avail)    # numero negativo indica que el elemento no estaba
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:findslot')
 
-
+#FIXME Agregar parametros, retorno y excepciones en la documentación.
 def isAvailable(table, pos):
     """
     Informa si la posición pos esta disponible en la tabla de hash.
@@ -341,9 +357,10 @@ def isAvailable(table, pos):
             return True
         return False
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:isAvailable')
 
-
+#FIXME Agregar parametros, retorno y excepciones en la documentación.
 def rehash(map):
     """
     Se aumenta la capacidad de la tabla al doble y se hace rehash de
@@ -371,6 +388,7 @@ def rehash(map):
                     map['currentfactor'] = map['size'] / map['capacity']
         return map
     except Exception as exp:
+        # FIXME Ajustar mensaje de error para que sea más claro
         error.reraise(exp, 'Probe:rehash')
 
 
@@ -378,7 +396,7 @@ def rehash(map):
 # is prime else returns False
 # This code is contributed by Sanjit_Prasad
 
-
+#FIXME Agregar documentación para que siga el formato que las demás funciones.
 def isPrime(n):
     # Corner cases
     if(n <= 1):
@@ -395,7 +413,7 @@ def isPrime(n):
 
     return True
 
-
+#FIXME Agregar documentación para que siga el formato que las demás funciones.
 # Function to return the smallest
 # prime number greater than N
 # # This code is contributed by Sanjit_Prasad
@@ -413,7 +431,7 @@ def nextPrime(N):
             found = True
     return int(prime)
 
-
+#FIXME Agregar documentación.
 def defaultcompare(key, element):
     if(key == element['key']):
         return 0

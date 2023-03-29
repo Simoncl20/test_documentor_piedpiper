@@ -29,6 +29,10 @@
 MapEntry representa una entrada (llave,valor) en un Map
 """
 
+# GENERAL
+#FIXME Cambiar todas las funciones y variables al formato snake_case
+#TODO Explicar más a profundidad que tipo de excepciones y errores puede generar cada función
+
 
 def newMapEntry(key, value):
     """
@@ -88,7 +92,7 @@ def getKey(entry):
     """
     return entry['key']
 
-
+#FIXME Modificar la documentación del retorno, debería ser el valor, no la llave
 def getValue(entry):
     """
     Retorna el valor de una pareja de un Map
