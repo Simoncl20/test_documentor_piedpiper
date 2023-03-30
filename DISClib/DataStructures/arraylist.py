@@ -40,6 +40,9 @@ assert config
   Algorithms, 4th Edition
 """
 
+#TODO Eliminar la carga de datos de la función newList
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Mejorar la documentación para especificar el uso del parámetro "key" en listas
 
 def newList(cmpfunction, module, key, filename, delim):
     """Crea una lista vacia.
@@ -72,7 +75,10 @@ def newList(cmpfunction, module, key, filename, delim):
             addLast(newlist, line)
     return (newlist)
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#FIXME Arreglar la documentación del código
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def addFirst(lst, element):
     """Agrega un elemento a la lista en la primera posicion.
 
@@ -96,7 +102,9 @@ def addFirst(lst, element):
     except Exception as exp:
         error.reraise(exp, 'arraylist->addFirst: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def addLast(lst, element):
     """ Agrega un elemento en la última posición de la lista.
 
@@ -116,7 +124,8 @@ def addLast(lst, element):
     except Exception as exp:
         error.reraise(exp, 'arraylist->addLast: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def isEmpty(lst):
     """ Indica si la lista está vacía
 
@@ -131,7 +140,7 @@ def isEmpty(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->isEmpty: ')
 
-
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def size(lst):
     """ Informa el número de elementos de la lista.
 
@@ -146,7 +155,9 @@ def size(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->size: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que la lista no sea vacía antes de obtener el primer elemento
 def firstElement(lst):
     """ Retorna el primer elemento de una lista no vacía.
         No se elimina el elemento.
@@ -162,7 +173,8 @@ def firstElement(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->firstElement: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def lastElement(lst):
     """ Retorna el último elemento de una  lista no vacia.
         No se elimina el elemento.
@@ -178,7 +190,8 @@ def lastElement(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->lastElement: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def getElement(lst, pos):
     """ Retorna el elemento en la posición pos de la lista.
 
@@ -199,7 +212,8 @@ def getElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'arraylist->getElement: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def deleteElement(lst, pos):
     """ Elimina el elemento en la posición pos de la lista.
 
@@ -221,7 +235,8 @@ def deleteElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'arraylist->deleteElement: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def removeFirst(lst):
     """ Remueve el primer elemento de la lista.
 
@@ -242,7 +257,8 @@ def removeFirst(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->removeFirst: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def removeLast(lst):
     """ Remueve el último elemento de la lista.
 
@@ -263,7 +279,9 @@ def removeLast(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->remoLast: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def insertElement(lst, element, pos):
     """ Inserta el elemento element en la posición pos de la lista.
 
@@ -286,7 +304,8 @@ def insertElement(lst, element, pos):
     except Exception as exp:
         error.reraise(exp, 'arraylist->insertElement: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def isPresent(lst, e):
     """ Informa si el elemento element esta presente en la lista.
 
@@ -318,7 +337,9 @@ def isPresent(lst, e):
     except Exception as exp:
         error.reraise(exp, 'arraylist->isPresent: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def changeInfo(lst, pos, newinfo):
     """ Cambia la informacion contenida en el nodo de la lista
         que se encuentra en la posicion pos.
@@ -337,7 +358,8 @@ def changeInfo(lst, pos, newinfo):
     except Exception as exp:
         error.reraise(exp, 'arraylist->changeInfo: ')
 
-
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que las posiciones que se pasan por parametro estén dentro del rango de la lista
 def exchange(lst, pos1, pos2):
     """ Intercambia la informacion en las posiciones pos1 y pos2 de la lista.
 
@@ -358,7 +380,8 @@ def exchange(lst, pos1, pos2):
     except Exception as exp:
         error.reraise(exp, 'arraylist->exchange: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def subList(lst, pos, numelem):
     """ Retorna una sublista de la lista lst.
 
@@ -392,7 +415,7 @@ def subList(lst, pos, numelem):
     except Exception as exp:
         error.reraise(exp, 'arraylist->subList: ')
 
-
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 def iterator(lst):
     """ Retorna un iterador para la lista.
     Args:
@@ -408,7 +431,8 @@ def iterator(lst):
     except Exception as exp:
         error.reraise(exp, 'arraylist->Iterator')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Mejorar la documentacion para el return en caso de que no sean iguales
 def compareElements(lst, element, info):
     """ Compara dos elementos
 
@@ -429,6 +453,8 @@ def compareElements(lst, element, info):
     else:
         return lst['cmpfunction'](element, info)
 
+#FIXME Cambiar el nombre de la funcion para que referencie mejor a una compare function
+#FIXME Cambiar el nombre de la funcion para usar snake_case
 
 def defaultfunction(id1, id2):
     if id1 > id2:

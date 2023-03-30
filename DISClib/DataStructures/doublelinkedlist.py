@@ -35,7 +35,9 @@ assert config
   Los elementos se cuentan desde la posición 1.
 """
 
-
+#TODO Mejorar la documentación para especificar el uso del parámetro "key" en listas
+#TODO Eliminar la carga de datos de la función newList
+#FIXME Cambiar el nombre de la funcion para usar snake_case
 def newList(cmpfunction, module,  key, filename, delim):
     """Crea una lista vacia.
 
@@ -82,7 +84,9 @@ def newList(cmpfunction, module,  key, filename, delim):
             addLast(newlist, line)
     return newlist
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def addFirst(lst, element):
     """Agrega un elemento a la lista en la primera posicion.
 
@@ -115,7 +119,9 @@ def addFirst(lst, element):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->addFirst: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def addLast(lst, element):
     """ Agrega un elemento en la última posición de la lista.
 
@@ -143,6 +149,8 @@ def addLast(lst, element):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->addLast: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def isEmpty(lst):
     """ Indica si la lista está vacía
@@ -157,6 +165,7 @@ def isEmpty(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->isEmpty: ')
 
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def size(lst):
     """ Informa el número de elementos de la lista.
@@ -171,6 +180,8 @@ def size(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->size: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def firstElement(lst):
     """ Retorna el primer elemento de una lista no vacía.
@@ -188,6 +199,8 @@ def firstElement(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->fisrtElement: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def lastElement(lst):
     """ Retorna el último elemento de una  lista no vacia.
@@ -205,6 +218,8 @@ def lastElement(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->lastElement: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def getElement(lst, pos):
     """ Retorna el elemento en la posición pos de la lista.
@@ -231,6 +246,8 @@ def getElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->getElement: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def deleteElement(lst, pos):
     """ Elimina el elemento en la posición pos de la lista.
@@ -274,6 +291,8 @@ def deleteElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->deleteElement: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def removeFirst(lst):
     """ Remueve el primer elemento de la lista.
@@ -300,6 +319,8 @@ def removeFirst(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->removeFirst: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def removeLast(lst):
     """ Remueve el último elemento de la lista.
@@ -333,7 +354,9 @@ def removeLast(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->remoLast: ')
 
-
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+#TODO Verificar que el elemento que se esta agregando no sea None
 def insertElement(lst, element, pos):
     """ Inserta el elemento element en la posición pos de la lista.
 
@@ -381,6 +404,8 @@ def insertElement(lst, element, pos):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->insertElement: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def isPresent(lst, element):
     """ Informa si el elemento element esta presente en la lista.
@@ -415,6 +440,8 @@ def isPresent(lst, element):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->isPresent: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def changeInfo(lst, pos, newinfo):
     """ Cambia la informacion contenida en el nodo de la lista que se encuentra
@@ -440,6 +467,7 @@ def changeInfo(lst, pos, newinfo):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->changeInfo: ')
 
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def exchange(lst, pos1, pos2):
     """ Intercambia la informacion en las posiciones pos1 y pos2 de la lista.
@@ -461,6 +489,8 @@ def exchange(lst, pos1, pos2):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->exchange: ')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def subList(lst, pos, numelem):
     """ Retorna una sublista de la lista lst.
@@ -496,6 +526,7 @@ def subList(lst, pos, numelem):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->subList: ')
 
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def iterator(lst):
     """ Retorna un iterador para la lista.
@@ -514,6 +545,8 @@ def iterator(lst):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->Iterator')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
 def compareElements(lst, element, info):
     """ Compara dos elementos
@@ -538,6 +571,8 @@ def compareElements(lst, element, info):
     except Exception as exp:
         error.reraise(exp, 'doublelinkedlist->compareElements')
 
+#FIXME Cambiar el nombre de la funcion para usar snake_case
+#FIXME Cambiar el nombre de la funcion para que referencie mejor a una compare function
 
 def defaultfunction(id1, id2):
     if id1 > id2:
