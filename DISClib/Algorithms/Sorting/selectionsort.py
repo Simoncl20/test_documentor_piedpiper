@@ -41,6 +41,7 @@ assert cf
 # TODO: agregar manejo de excepciones a la funcion
 # TODO agregar descricion del algoritmo en cada funcion
 
+
 def sort(lst, sort_crit):
     size = lt.size(lst)
     pos1 = 1

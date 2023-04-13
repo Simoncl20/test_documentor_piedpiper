@@ -47,6 +47,7 @@ Sedgewick: 1,5,19,41,109,209,929,2161,...
 # TODO: agregar manejo de excepciones a la funcion
 # TODO agregar descricion del algoritmo en cada funcion
 
+
 def sort(lst, sort_crit):
     n = lt.size(lst)
     h = 1

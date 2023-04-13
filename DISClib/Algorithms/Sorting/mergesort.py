@@ -41,6 +41,7 @@ assert cf
 # TODO: agregar excepciones mas especificas que no sean Exception
 # TODO mejorar la descricion del algoritmo de la funcion
 
+
 def sort(lst, sort_crit):
     size = lt.size(lst)
     if size > 1:
