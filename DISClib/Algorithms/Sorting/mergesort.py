@@ -35,6 +35,11 @@ assert cf
   Algorithms, 4th Edition
 """
 
+# FIXME: pasar a snake_case de python
+# FIXME: cambiar pruebas unitarias de acuerdo a los cambios realizados
+# TODO: tipar datos de entrada y salida de cada funcion
+# TODO: agregar excepciones mas especificas que no sean Exception
+# TODO mejorar la descricion del algoritmo de la funcion
 
 def sort(lst, sort_crit):
     size = lt.size(lst)
