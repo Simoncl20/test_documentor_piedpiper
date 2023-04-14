@@ -39,9 +39,10 @@ assert config
   Algorithms, 4th Edition
 """
 
-#TODO Mejorar la documentación para especificar el uso del parámetro "key" en listas
-#TODO Eliminar la carga de datos de la función newList
-#FIXME Cambiar el nombre de la funcion para usar snake_case
+
+# TODO documentar el uso especifico del parámetro "key" en listas
+# TODO Eliminar la carga de datos de la función newList
+# FIXME Cambiar el nombre de la funcion para usar snake_case
 def newList(cmpfunction, module, key, filename, delim):
     """Crea una lista vacia.
 
@@ -76,7 +77,7 @@ def newList(cmpfunction, module, key, filename, delim):
                'datastructure': module
                }
 
-    if(cmpfunction is None):
+    if (cmpfunction is None):
         newlist['cmpfunction'] = defaultfunction
     else:
         newlist['cmpfunction'] = cmpfunction
@@ -88,9 +89,10 @@ def newList(cmpfunction, module, key, filename, delim):
             addLast(newlist, line)
     return newlist
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Verificar que el elemento que se esta agregando no sea None
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
+# TODO Verificar que el elemento que se esta agregando no sea None
 def addFirst(lst, element):
     """Agrega un elemento a la lista en la primera posicion.
 
@@ -119,10 +121,10 @@ def addFirst(lst, element):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->addFirst: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Verificar que el elemento que se esta agregando no sea None
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
+# TODO Verificar que el elemento que se esta agregando no sea None
 def addLast(lst, element):
     """ Agrega un elemento en la última posición de la lista.
 
@@ -149,9 +151,9 @@ def addLast(lst, element):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->addLast: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def isEmpty(lst):
     """ Indica si la lista está vacía
     Args:
@@ -165,8 +167,8 @@ def isEmpty(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->isEmpty: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def size(lst):
     """ Informa el número de elementos de la lista.
     Args
@@ -180,9 +182,9 @@ def size(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->size: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def firstElement(lst):
     """ Retorna el primer elemento de una lista no vacía.
      No se elimina el elemento.
@@ -200,9 +202,9 @@ def firstElement(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->fisrtElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def lastElement(lst):
     """ Retorna el último elemento de una  lista no vacia.
         No se elimina el elemento.
@@ -220,9 +222,9 @@ def lastElement(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->lastElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def getElement(lst, pos):
     """ Retorna el elemento en la posición pos de la lista.
 
@@ -248,9 +250,9 @@ def getElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->getElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def deleteElement(lst, pos):
     """ Elimina el elemento en la posición pos de la lista.
 
@@ -284,9 +286,9 @@ def deleteElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->deleteElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def removeFirst(lst):
     """ Remueve el primer elemento de la lista.
     Elimina y retorna el primer elemento de la lista.
@@ -312,9 +314,9 @@ def removeFirst(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->removeFirst: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def removeLast(lst):
     """ Remueve el último elemento de la lista.
 
@@ -348,9 +350,10 @@ def removeLast(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->remoLast: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Verificar que el elemento que se esta agregando no sea None
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
+# TODO Verificar que el elemento que se esta agregando no sea None
 def insertElement(lst, element, pos):
     """ Inserta el elemento element en la posición pos de la lista.
 
@@ -392,9 +395,9 @@ def insertElement(lst, element, pos):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->insertElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def isPresent(lst, element):
     """ Informa si el elemento element esta presente en la lista.
 
@@ -428,9 +431,9 @@ def isPresent(lst, element):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->isPresent: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def changeInfo(lst, pos, newinfo):
     """ Cambia la informacion contenida en el nodo de la lista que se encuentra
          en la posicion pos.
@@ -455,8 +458,8 @@ def changeInfo(lst, pos, newinfo):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->changeInfo: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def exchange(lst, pos1, pos2):
     """ Intercambia la informacion en las posiciones pos1 y pos2 de la lista.
 
@@ -477,9 +480,9 @@ def exchange(lst, pos1, pos2):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->exchange: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def subList(lst, pos, numelem):
     """ Retorna una sublista de la lista lst.
 
@@ -514,8 +517,8 @@ def subList(lst, pos, numelem):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->subList: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def iterator(lst):
     """ Retorna un iterador para la lista.
     Args:
@@ -533,9 +536,9 @@ def iterator(lst):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->Iterator')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo detallado de excepciones con mensajes más especificos
 def compareElements(lst, element, info):
     """ Compara dos elementos
 
@@ -559,9 +562,9 @@ def compareElements(lst, element, info):
     except Exception as exp:
         error.reraise(exp, 'singlelinkedlist->compareElements')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#FIXME Cambiar el nombre de la funcion para que referencie mejor a una compare function
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# FIXME Cambiar el nombre de la funcion para que referencie mejor la cmp func
 def defaultfunction(id1, id2):
     if id1 > id2:
         return 1
