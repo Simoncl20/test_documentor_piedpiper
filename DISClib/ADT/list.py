@@ -37,10 +37,10 @@ assert config
 """
 
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Mejorar la documentacion para especificar qué deberían retornar las compare functions 
-#TODO Mejorar la documentación para especificar el uso del parámetro "key" en listas
+# FIXME Cambiar formato de funciones a snake_case
+# TODO Implementar manejo más detallado de excepciones
+# TODO Mejorar la documentacion del retorno del compare functions
+# TODO Mejorar la documentación para el uso del parámetro "key" en listas
 def newList(datastructure='SINGLE_LINKED',
             cmpfunction=None,
             key=None,
@@ -86,8 +86,9 @@ def newList(datastructure='SINGLE_LINKED',
     except Exception as exp:
         error.reraise(exp, 'TADList->newList: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def addFirst(lst, element):
     """Agrega un elemento a la lista en la primera posicion.
 
@@ -110,8 +111,9 @@ def addFirst(lst, element):
     except Exception as exp:
         error.reraise(exp, 'TADList->addFirst: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def addLast(lst, element):
     """ Agrega un elemento en la última posición de la lista.
 
@@ -130,9 +132,10 @@ def addLast(lst, element):
     except Exception as exp:
         error.reraise(exp, 'TADList->addLast: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Mejorar la documentación para definir qué retorna la funcion en cada caso
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
+# TODO Mejorar la documentación para definir el return en cada caso
 def isEmpty(lst):
     """ Indica si la lista está vacía
 
@@ -147,8 +150,9 @@ def isEmpty(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->isEmpty: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Mejorar la documentación para definir qué retorna la funcion en cada caso
+
+# TODO Implementar manejo más detallado de excepciones
+# TODO Mejorar la documentación para definir el return en cada caso
 def size(lst):
     """ Informa el número de elementos de la lista.
 
@@ -163,8 +167,9 @@ def size(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->size: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def firstElement(lst):
     """ Retorna el primer elemento de una lista no vacía.
         No se elimina el elemento.
@@ -180,8 +185,9 @@ def firstElement(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->firstElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def lastElement(lst):
     """ Retorna el último elemento de una  lista no vacia.
         No se elimina el elemento.
@@ -197,8 +203,9 @@ def lastElement(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->LastElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def getElement(lst, pos):
     """ Retorna el elemento en la posición pos de la lista.
 
@@ -219,8 +226,9 @@ def getElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'List->getElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def deleteElement(lst, pos):
     """ Elimina el elemento en la posición pos de la lista.
 
@@ -241,8 +249,9 @@ def deleteElement(lst, pos):
     except Exception as exp:
         error.reraise(exp, 'TADList->deleteElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def removeFirst(lst):
     """ Remueve el primer elemento de la lista.
 
@@ -263,8 +272,9 @@ def removeFirst(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->removeFirst: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def removeLast(lst):
     """ Remueve el último elemento de la lista.
 
@@ -285,8 +295,9 @@ def removeLast(lst):
     except Exception as exp:
         error.reraise(exp, 'TADList->removeLast: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def insertElement(lst, element, pos):
     """ Inserta el elemento element en la posición pos de la lista.
 
@@ -308,8 +319,9 @@ def insertElement(lst, element, pos):
     except Exception as exp:
         error.reraise(exp, 'TADList->insertElement: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def isPresent(lst, element):
     """ Informa si el elemento element esta presente en la lista.
 
@@ -331,7 +343,8 @@ def isPresent(lst, element):
     except Exception as exp:
         error.reraise(exp, 'TADList->isPresent: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# TODO Implementar manejo más detallado de excepciones
 def exchange(lst, pos1, pos2):
     """ Intercambia la informacion en las posiciones pos1 y pos2 de la lista.
 
@@ -348,8 +361,9 @@ def exchange(lst, pos1, pos2):
     except Exception as exp:
         error.reraise(exp, 'List->exchange: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def changeInfo(lst, pos, element):
     """ Cambia la informacion contenida en el nodo de la lista
         que se encuentra en la posicion pos.
@@ -368,8 +382,9 @@ def changeInfo(lst, pos, element):
     except Exception as exp:
         error.reraise(exp, 'List->changeInfo: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo más detallado de excepciones
 def subList(lst, pos, numelem):
     """ Retorna una sublista de la lista lst.
 
@@ -390,8 +405,9 @@ def subList(lst, pos, numelem):
     except Exception as exp:
         error.reraise(exp, 'List->subList: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Mejorar la documentacion de lo que hace esta funcion
+
+# TODO Implementar manejo más detallado de excepciones
+# TODO Mejorar la documentacion de lo que hace esta funcion
 def iterator(lst):
     """ Retorna un iterador para la lista.
     Args:
@@ -409,16 +425,17 @@ def iterator(lst):
 """
 Selector dinamico de la estructua de datos solicitada
 """
-#TODO convertir en data class
+# TODO convertir en data class
 switch_module = {
     "ARRAY_LIST": ".arraylist",
     "SINGLE_LINKED": ".singlelinkedlist",
     "DOUBLE_LINKED": ".doublelinkedlist"
 }
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo de excepciones para asegurar que la entrada no genera una excepcion en switch_module (Raise ValueError)
-#TODO Especificar los tipos de datos esperados de entrada y salida de cada función
+
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Implementar manejo de excepciones para switch_module (Raise ValueError)
+# TODO Especificar los tipos de datos de entrada y salida de cada función
 def listSelector(datastructure):
     """
     Carga dinamicamente el import de la estructura de datos

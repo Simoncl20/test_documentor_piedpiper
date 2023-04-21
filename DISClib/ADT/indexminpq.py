@@ -71,7 +71,7 @@ def isEmpty(iminpq):
     """
     # FIXME falta agregar el manejo de excepciones
     # TODO agregar tipos de datos para input y output
-    return(h.isEmpty(iminpq))
+    return (h.isEmpty(iminpq))
 
 
 def size(iminpq):
@@ -87,7 +87,7 @@ def size(iminpq):
     """
     # FIXME falta agregar el manejo de excepciones
     # TODO agregar tipos de datos para input y output
-    return(h.size(iminpq))
+    return (h.size(iminpq))
 
 
 def insert(iminpq, key, index):

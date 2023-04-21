@@ -35,9 +35,9 @@ assert config
   (Stack) sobre una lista encadenada.
 """
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Especifiar detalladamente los tipos de errores de la Exception
 def newStack(datastructure='DOUBLE_LINKED'):
     """ Crea una pila vacia.
 
@@ -54,8 +54,8 @@ def newStack(datastructure='DOUBLE_LINKED'):
     except Exception as exp:
         error.reraise(exp, 'TADStack->newStack: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Especifiar detalladamente los tipos de errores de la Exception
 def push(stack, element):
     """ Agrega el elemento element en el tope de la pila.
 
@@ -75,8 +75,8 @@ def push(stack, element):
     except Exception as exp:
         error.reraise(exp, 'TADStack->Push: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Especifiar detalladamente los tipos de errores de la Exception
 def pop(stack):
     """ Retorna el elemento  presente en el tope de la pila.
 
@@ -97,9 +97,9 @@ def pop(stack):
     except Exception as exp:
         error.reraise(exp, 'TADStack->pop: ')
 
-#FIXME Cambiar el nombre de la funcion para usar snake_case
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# FIXME Cambiar el nombre de la funcion para usar snake_case
+# TODO Especifiar detalladamente los tipos de errores de la Exception
 def isEmpty(stack):
     """Informa si la pila es vacía o no
      Args:
@@ -117,8 +117,9 @@ def isEmpty(stack):
     except Exception as exp:
         error.reraise(exp, 'TADStack->isEmpty: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
-#TODO Implementar verificacion para el caso en el que la pila está vacía
+
+# TODO Especifiar detalladamente los tipos de errores de la Exception
+# TODO Implementar verificacion para el caso en el que la pila está vacía
 def top(stack):
     """ Retorna el elemento en tope de la pila, sin eliminarlo de la pila
 
@@ -136,8 +137,8 @@ def top(stack):
     except Exception as exp:
         error.reraise(exp, 'TADStack->top: ')
 
-#TODO Implementar manejo más detallado de excepciones con mensajes más especificos
 
+# TODO Especifiar detalladamente los tipos de errores de la Exception
 def size(stack):
     """ Informa el número de elementos en la pila
     Args:

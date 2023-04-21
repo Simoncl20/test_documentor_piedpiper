@@ -35,11 +35,12 @@ assert config
   de datos Hash Table, con resolución de colisiones: Linear Probing
   o separate chaining
 """
-# GENERAL
-#FIXME Cambiar todas las funciones y variables al formato snake_case
-#TODO Explicar más a profundidad que tipo de excepciones y errores puede generar cada función
 
-#FIXME Modificar documentación del numelements
+
+# GENERAL
+# FIXME Cambiar todas las funciones y variables al formato snake_case
+# TODO Explicar mejor que tipo de excepciones y errores de cada función
+# FIXME Modificar documentación del numelements
 def newMap(numelements=17,
            prime=109345121,
            maptype='CHAINING',
@@ -81,7 +82,8 @@ def put(map, key, value):
     """
     return map['datastructure'].put(map, key, value)
 
-#TODO Especificar que la pareja <llave,valor> es de tipo mapentry
+
+# TODO Especificar que la pareja <llave,valor> es de tipo mapentry
 def get(map, key):
     """ Retorna la pareja llave, valor, cuya llave sea igual a key
     Args:
@@ -95,7 +97,8 @@ def get(map, key):
     """
     return map['datastructure'].get(map, key)
 
-#TODO Modificar documentación para que siga los lineamientos de las demás funciones
+
+# TODO Modificar documentación para seguir los lineamientos de las funciones
 def remove(map, key):
     """ Elimina la pareja llave,valor, donde llave == key.
     Args:
@@ -109,7 +112,8 @@ def remove(map, key):
     """
     return map['datastructure'].remove(map, key)
 
-#TODO Indicar en el retorno cuando es True y cuando es False, similar a la documentación de isEmpty
+
+# TODO Indicar en el retorno cuando es True o False, similar al isEmpty()
 def contains(map, key):
     """ Retorna True si la llave key se encuentra en el map
         o False en caso contrario.
@@ -149,7 +153,8 @@ def isEmpty(map):
     """
     return map['datastructure'].isEmpty(map)
 
-#TODO Indicar que esta es una lista de DISCLib
+
+# TODO Indicar que esta es una lista de DISCLib
 def keySet(map):
     """
     Retorna una lista con todas las llaves de la tabla de hash
@@ -163,7 +168,8 @@ def keySet(map):
     """
     return map['datastructure'].keySet(map)
 
-#TODO Indicar que esta es una lista de DISCLib
+
+# TODO Indicar que devuelve una lista de DISCLib
 def valueSet(map):
     """
     Retorna una lista con todos los valores de la tabla de hash
@@ -177,7 +183,8 @@ def valueSet(map):
     """
     return map['datastructure'].valueSet(map)
 
-#FIXME Corregir error de ortografía
+
+# FIXME Corregir error de ortografía
 """
 Selector dinamico de la estructua de datos solicitada
 """
@@ -187,7 +194,8 @@ switch_module = {
     "PROBING": ".probehashtable",
 }
 
-#FIXME Agregar parámetros y retorno a la documentación
+
+# FIXME Agregar parámetros y retorno a la documentación
 def mapSelector(datastructure):
     """
     Carga dinamicamente el import de la estructura de datos
