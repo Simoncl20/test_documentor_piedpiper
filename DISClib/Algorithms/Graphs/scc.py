@@ -35,10 +35,10 @@ from DISClib.ADT import map
 assert config
 
 """ Cambios generales """
-# FIXME: Arreglar el nombramineto de todas las funciones a nombramiento de python (snake_case)
-# FIXME: Hacer mantenimiento a las pruebas unitarias en base a los cambios realizados
-# TODO: Documentar el tipo de datos de las variables de entrada de cada funcion de forma breve
-# TODO: Mejorar las excepciones de cada funcion para que sean mas especificas y no la base Exception
+# FIXME Pasar los mombres de las funciones a snake_case
+# FIXME Actualizar a las pruebas unitarias en base a los cambios realizados
+# TODO Documentar el tipo de datos de las variables de entrada de cada funcion
+# TODO Mejorar las excepciones de las funciones para que sean mas especificas
 
 
 def KosarajuSCC(graph):
@@ -55,9 +55,14 @@ def KosarajuSCC(graph):
         Exception
     """
     try:
-        scc = {"idscc": None, "marked": None, "grmarked": None, "components": 0}
+        scc = {
+            "idscc": None,
+            "marked": None,
+            "grmarked": None,
+            "components": 0,
+        }
 
-        # FIXME: Evitar duplicidad de codigo en la creacion de los mapas
+        # FIXME Evitar duplicidad de codigo en la creacion de los mapas
 
         scc["idscc"] = map.newMap(
             g.numVertices(graph),
@@ -95,7 +100,7 @@ def KosarajuSCC(graph):
         error.reraise(exp, "scc:Kosaraju")
 
 
-# FIXME: Documentar entradas y salidas de la funcion asi como las excepciones
+# FIXME Documentar entradas y salidas de la funcion asi como las excepciones
 def sccCount(graph, scc, vert):
     """
     Este algoritmo cuenta el número de componentes conectados.
@@ -120,7 +125,7 @@ def stronglyConnected(scc, verta, vertb):
     try:
         scca = map.get(scc["idscc"], verta)["value"]
         sccb = map.get(scc["idscc"], vertb)["value"]
-        # FIXME: Cambiar por return scca == sccb
+        # FIXME Cambiar por return scca == sccb
         if scca == sccb:
             return True
         return False
@@ -128,7 +133,7 @@ def stronglyConnected(scc, verta, vertb):
         error.reraise(exp, "dfo:Sconnected")
 
 
-# FIXME: Documentar entradas y salidas de la funcion asi como las excepciones
+# FIXME Documentar entradas y salidas de la funcion asi como las excepciones
 def connectedComponents(scc):
     """
     Retorna el numero de componentes conectados
@@ -144,7 +149,7 @@ def connectedComponents(scc):
 # --------------------------------------------------
 
 
-# FIXME: Documentar entradas y salidas de la funcion asi como las excepciones
+# FIXME Documentar entradas y salidas de la funcion asi como las excepciones
 def reverseGraph(graph):
     """
     Retornar el reverso del grafo graph
@@ -169,6 +174,6 @@ def reverseGraph(graph):
         error.reraise(exp, "scc:reverse")
 
 
-# FIXME: Documentar entradas y salidas de la funcion
+# FIXME Documentar entradas y salidas de la funcion
 def comparenames(searchname, element):
     return searchname == element["key"]

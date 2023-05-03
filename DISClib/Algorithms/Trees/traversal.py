@@ -29,11 +29,11 @@ import config
 from DISClib.ADT import list as lt
 assert config
 
-#FIXME Cambiar todas las funciones y variables al formato snake_case
-#TODO Explicar más a profundidad que tipo de excepciones y errores puede generar cada función
-#TODO Tener cuidado con el uso de diccionarios, ya que se convertirán en Data Classes
 
-#FIXME Documentar argumentos, retorno y excepciones
+# FIXME Cambiar todas las funciones y variables al formato snake_case
+# TODO Explicar detalladamente los tipos de excepciones y errores
+# TODO actualizar uso de diccionario a dataclasses
+# FIXME Documentar argumentos, retorno y excepciones
 def inorder(omap):
     """
     Implementa un recorrido inorder de un arbol binario
@@ -43,7 +43,8 @@ def inorder(omap):
         lst = inorderTree(omap['root'], lst)
     return lst
 
-#FIXME Documentar argumentos, retorno y excepciones
+
+# FIXME Documentar argumentos, retorno y excepciones
 def preorder(omap):
     """
     Implementa un recorrido preorder de un arbol binario
@@ -53,7 +54,8 @@ def preorder(omap):
         lst = preorderTree(omap['root'], lst)
     return lst
 
-#FIXME Documentar argumentos, retorno y excepciones
+
+# FIXME Documentar argumentos, retorno y excepciones
 def postorder(omap):
     """
     Implementa un recorrido postorder de un arbol binario
@@ -68,7 +70,7 @@ def postorder(omap):
 #            Funciones Helper
 # _____________________________________________________________________
 
-#FIXME Agregar documentación a la función
+# FIXME Agregar documentación a la función
 def inorderTree(root, lst):
     if (root is None):
         return None
@@ -78,7 +80,8 @@ def inorderTree(root, lst):
         inorderTree(root['right'], lst)
     return lst
 
-#FIXME Agregar documentación a la función
+
+# FIXME Agregar documentación a la función
 def postorderTree(root, lst):
     if (root is None):
         return None
@@ -88,7 +91,8 @@ def postorderTree(root, lst):
         lt.addLast(lst, root['value'])
     return lst
 
-#FIXME Agregar documentación a la función
+
+# FIXME Agregar documentación a la función
 def preorderTree(root, lst):
     if (root is None):
         return None

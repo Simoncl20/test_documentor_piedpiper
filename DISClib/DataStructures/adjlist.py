@@ -310,8 +310,8 @@ def getEdge(graph, vertexa, vertexb):
                 if (e.either(edge) == vertexa and
                    (e.other(edge, e.either(edge)) == vertexb)):
                     return edge
-            elif(e.either(edge) == vertexa or
-                 (e.other(edge, e.either(edge)) == vertexa)):
+            elif (e.either(edge) == vertexa or
+                (e.other(edge, e.either(edge)) == vertexa)):
                 if (e.either(edge) == vertexb or
                    (e.other(edge, e.either(edge)) == vertexb)):
                     return edge

@@ -38,13 +38,13 @@ import math
 assert config
 
 """ Cambios generales """
-# FIXME: Arreglar el nombramineto de todas las funciones a nombramiento de python (snake_case)
-# FIXME: Hacer mantenimiento a las pruebas unitarias en base a los cambios realizados
-# TODO: Documentar el tipo de datos de las variables de entrada de cada funcion de forma breve
-# TODO: Mejorar las excepciones de cada funcion para que sean mas especificas y no la base Exception
+# FIXME Pasar los mombres de las funciones a snake_case
+# FIXME Actualizar a las pruebas unitarias en base a los cambios realizados
+# TODO Documentar el tipo de datos de las variables de entrada de cada funcion
+# TODO Mejorar las excepciones de las funciones para que sean mas especificas
 
 
-# FIXME documentacion: Especificar que tipo de dato es cada parametro y que tipo retorna la funcion ademas de que hace
+# FIXME Especificar los tipos de datos  en los parametros y retorno
 def PrimMST(graph, origin=None):
     """
     Implementa el algoritmo de Prim
@@ -71,7 +71,7 @@ def PrimMST(graph, origin=None):
         error.reraise(exp, "prim:PrimMST")
 
 
-# FIXME: Cambiar el nombre de las variablees para que no usen nombres de funciones construidas en python como min
+# FIXME Cambiar las variables para no usar nombres reservados en python
 def prim(graph, search, v):
     """
     Args:
@@ -114,19 +114,21 @@ def scan(graph, search, vertex):
                     map.put(search["distTo"], w, e.weight(edge))
                     map.put(search["edgeTo"], w, edge)
                     if pq.contains(search["pq"], w):
-                        pq.decreaseKey(
-                            search["pq"], w, map.get(search["distTo"], w)["value"]
-                        )
+                        pq.decreaseKey(search["pq"],
+                                       w,
+                                       map.get(search["distTo"], w)["value"]
+                                       )
                     else:
                         pq.insert(
-                            search["pq"], w, map.get(search["distTo"], w)["value"]
-                        )
+                                  search["pq"],
+                                  w, map.get(search["distTo"], w)["value"]
+                                  )
         return search
     except Exception as exp:
         error.reraise(exp, "prim:scan")
 
 
-# FIXME: Cambiar "pila" por "cola" en la documentacion del return
+# FIXME Cambiar "pila" por "cola" en la documentacion del return
 def edgesMST(graph, search):
     """
     Args:
@@ -179,7 +181,7 @@ def initSearch(graph):
             "mst": None,
         }
 
-        # FIXME: Evitar duplicidad de codigo para crear cada napa del search asi el codigo es mas mantenible
+        # FIXME Mejorar la mantenibilidad evitando duplicidad de este codigo
 
         search["edgeTo"] = map.newMap(
             numelements=g.numVertices(graph),
