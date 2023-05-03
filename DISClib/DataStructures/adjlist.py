@@ -48,7 +48,7 @@ def newGraph(size, cmpfunction, directed, type, datastructure):
 
     Args:
         size: Tamaño inicial del grafo
-        comparefunction: Funcion de comparacion
+        cmpfunction: Funcion de comparacion
         directed: Indica si el grafo es dirigido o no
     Returns:
         Un nuevo grafo vacío
@@ -60,7 +60,7 @@ def newGraph(size, cmpfunction, directed, type, datastructure):
         graph = {'vertices': None,
                  'edges': 0,
                  'type': type,
-                 'comparefunction': cmpfunction,
+                 'cmpfunction': cmpfunction,
                  'directed': directed,
                  'indegree': None,
                  'datastructure': datastructure
@@ -71,12 +71,12 @@ def newGraph(size, cmpfunction, directed, type, datastructure):
 
         graph['vertices'] = map.newMap(numelements=size,
                                        maptype='PROBING',
-                                       comparefunction=cmpfunction)
+                                       cmpfunction=cmpfunction)
         if (directed):
             # FIXME ajustar comportamiento segun actualizaciones ADT map
             graph['indegree'] = map.newMap(numelements=size,
                                            maptype='PROBING',
-                                           comparefunction=cmpfunction)
+                                           cmpfunction=cmpfunction)
         return graph
     except Exception as exp:
         # FIXME ajustar mensaje segun actualizaciones del modulo error

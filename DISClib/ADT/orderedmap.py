@@ -35,8 +35,8 @@ assert config
 # FIXME Indicar siempre que el mapa utilizado en esta clase es un mapa ordenado
 # TODO Explica que tipo de excepciones y errores puede generar cada función
 # FIXME Agregar todos los parámetros a la documentación
-# FIXME Cambiar nombre de comparefunction para consistencia otras estructuras
-def newMap(omaptype='RBT', comparefunction=None):
+# FIXME Cambiar nombre de cmpfunction para consistencia otras estructuras
+def newMap(omaptype='RBT', cmpfunction=None):
     """
     Crea una tabla de simbolos ordenada.
     Args:
@@ -48,7 +48,7 @@ def newMap(omaptype='RBT', comparefunction=None):
         Exception
     """
     om = mapSelector(omaptype)
-    return om.newMap(omaptype, comparefunction, om)
+    return om.newMap(omaptype, cmpfunction, om)
 
 
 def put(map, key, value):

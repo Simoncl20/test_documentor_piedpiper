@@ -9,7 +9,7 @@ assert config
 
 @pytest.fixture
 def graph():
-    graph = g.newGraph(size=10, comparefunction=compareVertices)
+    graph = g.newGraph(size=10, cmpfunction=compareVertices)
     g.insertVertex(graph, 'Bogota')
     g.insertVertex(graph, 'Yopal')
     g.insertVertex(graph, 'Cali')
@@ -35,7 +35,7 @@ def graph():
 @pytest.fixture
 def digraph():
     digraph = g.newGraph(size=10, directed=True,
-                         comparefunction=compareVertices)
+                         cmpfunction=compareVertices)
     return digraph
 
 

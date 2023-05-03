@@ -7,14 +7,14 @@ assert config
 
 @pytest.fixture
 def graph():
-    graph = g.newGraph(size=10, directed=False, comparefunction=comparenames)
+    graph = g.newGraph(size=10, directed=False, cmpfunction=comparenames)
     return graph
 
 
 @pytest.fixture
 def digraph():
     digraph = g.newGraph(size=10, directed=True,
-                         comparefunction=comparenames)
+                         cmpfunction=comparenames)
     return digraph
 
 

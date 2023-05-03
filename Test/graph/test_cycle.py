@@ -9,7 +9,7 @@ assert config
 @pytest.fixture
 def cgraph():
     graph = g.newGraph(size=7,
-                       comparefunction=compareVertices,
+                       cmpfunction=compareVertices,
                        directed=True)
 
     g.insertVertex(graph, 'S1')
@@ -39,7 +39,7 @@ def cgraph():
 @pytest.fixture
 def acgraph():
     graph = g.newGraph(size=7,
-                       comparefunction=compareVertices,
+                       cmpfunction=compareVertices,
                        directed=True)
 
     g.insertVertex(graph, 'S1')

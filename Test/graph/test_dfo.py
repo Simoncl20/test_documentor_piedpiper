@@ -8,7 +8,7 @@ assert config
 
 @pytest.fixture
 def graph():
-    graph = g.newGraph(size=10, directed=True, comparefunction=compareVertices)
+    graph = g.newGraph(size=10, directed=True, cmpfunction=compareVertices)
     g.insertVertex(graph, 'Calculo1')
     g.insertVertex(graph, 'Calculo2')
     g.insertVertex(graph, 'Diseno1')

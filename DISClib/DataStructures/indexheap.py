@@ -59,7 +59,7 @@ def newIndexHeap(cmpfunction):
         # FIXME ajustar comportamiento segun actualizaciones del ADT map
         indexheap['qpMap'] = map.newMap(
                                         maptype='PROBING',
-                                        comparefunction=cmpfunction
+                                        cmpfunction=cmpfunction
                                         )
         return indexheap
     except Exception as exp:
