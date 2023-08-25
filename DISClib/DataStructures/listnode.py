@@ -58,7 +58,7 @@ def get_element(node: sll_node[T] | dll_node[T]) -> T:    # T can be any type
     :type node: sll_node[T] | dll_node[T]
     :return: _description_
     :rtype: T
-    """    
+    """
     return node.info
 
 
