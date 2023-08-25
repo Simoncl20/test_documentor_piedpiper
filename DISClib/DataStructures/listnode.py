@@ -31,6 +31,7 @@
 
 
 def newSingleNode(element):
+    # TODO: Cambiar implementación a Dataclass
     """
     Estructura que contiene la información a guardar en una lista encadenada
     """
@@ -39,6 +40,7 @@ def newSingleNode(element):
 
 
 def getElement(node):
+    # TODO: Cambiar implementación a Dataclass
     """
     Retorna la información de un nodo
     Args:
@@ -50,6 +52,7 @@ def getElement(node):
 
 
 def newDoubleNode(element):
+    # TODO: Cambiar implementación a Dataclass
     """
     Estructura que contiene la información a guardar en una lista encadenada
     doblemente
