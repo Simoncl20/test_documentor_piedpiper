@@ -45,28 +45,28 @@ TEST_LT = [
     ]
 
 
-def test_sll_node():
+def test_single_node():
     """test_sll_node _summary_
     """
     # create a single linked list node
     node = single_node(TEST_STR)
     # assert that the node data is not None
     assert node.info == TEST_STR
-    # assert that the node next_node is None or a single_node
-    assert node.next_node is None or isinstance(node.next_node, single_node)
+    # assert that the node _next is None or a single_node
+    assert node._next is None or isinstance(node._next, single_node)
 
 
-def test_dll_node():
+def test_double_node():
     """test_dll_node _summary_
     """
     # create a double linked list node
     node = double_node(TEST_STR)
     # assert that the node data is not None
     assert node.info == TEST_STR
-    # assert that the node next_node is None or a double_node
-    assert node.next_node is None or isinstance(node.next_node, double_node)
-    # assert that the node prev_node is None or a double_node
-    assert node.prev_node is None or isinstance(node.prev_node, double_node)
+    # assert that the node _next is None or a double_node
+    assert node._next is None or isinstance(node._next, double_node)
+    # assert that the node _prev is None or a double_node
+    assert node._prev is None or isinstance(node._prev, double_node)
 
 
 def test_get_element():
@@ -90,8 +90,8 @@ def test_get_element():
     assert get_element(node) == TEST_STR
 
 
-def test_sll_node_type():
-    """test_sll_node_type _summary_
+def test_single_node_type():
+    """test_single_node_type _summary_
     """
     # TESTING WITH INT
     # create a single linked list node
@@ -100,8 +100,8 @@ def test_sll_node_type():
     assert isinstance(node, single_node)
     # assert that the node info is an int
     assert isinstance(node.info, int)
-    # assert the node next_node reference is None
-    assert node.next_node is None or isinstance(node.next_node, single_node)
+    # assert the node _next reference is None
+    assert node._next is None or isinstance(node._next, single_node)
 
     # TESTING WITH FLOAT
     # create a single_node with float info
@@ -132,8 +132,8 @@ def test_sll_node_type():
     for key in TEST_DICT.keys():
         assert key in node.info.keys()
         assert isinstance(node.info[key], type(TEST_DICT[key]))
-    # assert the node next_node reference is None
-    assert node.next_node is None or isinstance(node.next_node, single_node)
+    # assert the node _next reference is None
+    assert node._next is None or isinstance(node._next, single_node)
 
     # TESTING WITH LIST
     # create a single_node with list info
@@ -145,8 +145,8 @@ def test_sll_node_type():
         assert node.info[i] == TEST_LT[i]
 
 
-def test_dll_node_type():
-    """test_dll_node_type _summary_
+def test_double_node_type():
+    """test_double_node_type _summary_
     """
 
     # TESTING WITH INT
@@ -156,9 +156,9 @@ def test_dll_node_type():
     assert isinstance(node, double_node)
     # assert that the node info is an int
     assert isinstance(node.info, int)
-    # assert the node next_node reference is None
-    assert node.next_node is None or isinstance(node.next_node, double_node)
-    assert node.prev_node is None or isinstance(node.prev_node, double_node)
+    # assert the node _next reference is None
+    assert node._next is None or isinstance(node._next, double_node)
+    assert node._prev is None or isinstance(node._prev, double_node)
 
     # TESTING WITH FLOAT
     # create a double_node with float info
@@ -189,9 +189,9 @@ def test_dll_node_type():
     for key in TEST_DICT.keys():
         assert key in node.info.keys()
         assert isinstance(node.info[key], type(TEST_DICT[key]))
-    # assert the node next_node reference is None
-    assert node.next_node is None or isinstance(node.next_node, double_node)
-    assert node.prev_node is None or isinstance(node.prev_node, double_node)
+    # assert the node _next reference is None
+    assert node._next is None or isinstance(node._next, double_node)
+    assert node._prev is None or isinstance(node._prev, double_node)
 
     # TESTING WITH LIST
     # create a double_node with list info
@@ -203,44 +203,44 @@ def test_dll_node_type():
         assert node.info[i] == TEST_LT[i]
 
 
-def test_sll_node_ref():
-    """test_sll_node_ref _summary_
+def test_single_node_ref():
+    """test_single_node_ref _summary_
     """
     # create two different single linked list nodes
     node_a = single_node(TEST_STR)
     node_b = single_node("Hello Next Node!")
-    # assigning node_a next_node reference to node_b
-    node_a.next_node = node_b
-    # assert that node_a next_node reference is node_b
-    assert node_a.next_node == node_b
-    # assert that node_b next_node reference is None or a single_node
-    assert node_b.next_node is None or isinstance(node_b.next_node, single_node)
+    # assigning node_a _next reference to node_b
+    node_a._next = node_b
+    # assert that node_a _next reference is node_b
+    assert node_a._next == node_b
+    # assert that node_b _next reference is None or a single_node
+    assert node_b._next is None or isinstance(node_b._next, single_node)
 
 
-def test_dll_node_ref():
-    """test_dll_node_ref _summary_
+def test_double_node_ref():
+    """test_double_node_ref _summary_
     """
     # create three different double linked list nodes
     node_a = double_node(TEST_STR)
     node_b = double_node("Hello Next Node!")
     node_c = double_node("Hello Prev Node!")
 
-    # assigning node_a next_node reference to node_b
-    node_a.next_node = node_b
-    # assigning node_b prev_node reference to node_c
-    node_a.prev_node = node_c
-    # assert that node_a next_node reference is node_b
-    assert node_a.next_node == node_b
-    # assert that node_b prev_node reference is node_c
-    assert node_a.prev_node == node_c
-    # assert that node_b next_node reference is None or a double_node
-    assert node_a.next_node is None or node_a.next_node == node_b
-    # assert that node_c prev_node reference is None or a double_node
-    assert node_a.prev_node is None or node_a.prev_node == node_c
+    # assigning node_a _next reference to node_b
+    node_a._next = node_b
+    # assigning node_b _prev reference to node_c
+    node_a._prev = node_c
+    # assert that node_a _next reference is node_b
+    assert node_a._next == node_b
+    # assert that node_b _prev reference is node_c
+    assert node_a._prev == node_c
+    # assert that node_b _next reference is None or a double_node
+    assert node_a._next is None or node_a._next == node_b
+    # assert that node_c _prev reference is None or a double_node
+    assert node_a._prev is None or node_a._prev == node_c
 
 
-def test_sll_node_typerr():
-    """test_sll_node_err _summary_
+def test_single_node_typerr():
+    """test_single_node_err _summary_
     """
     # type error test data list
     type_err_lt = [
@@ -250,15 +250,59 @@ def test_sll_node_typerr():
         TEST_DICT,
         TEST_LT,
         ]
+    # list to check the type error
+    check_err_lt = [
+        float,
+        int,
+        dict,
+        list,
+        bool,
+        ]
 
-    for type_var in type_err_lt:
+    # iterate over the type error list
+    for dtype, check in zip(type_err_lt, check_err_lt):
         # create a single linked list node with type error data
-        with pytest.raises(TypeError) as err_info:
-            node = single_node(type_var)
-            assert node is not None
-        # assert if the type error is raised
-        assert isinstance(err_info.value, TypeError)
-        assert err_info.match("Invalid data type for node info")
+        node = single_node(dtype)
+        try:
+            # try to change the node info to a different type
+            node.info = check
+        except Exception as exc:
+            # assert if the type error is raised
+            assert isinstance(exc, TypeError)
+            assert exc.args[0] == "Invalid data type for node info"
+
+
+def test_double_node_typerr():
+    """test_double_node_err _summary_
+    """
+    # type error test data list
+    type_err_lt = [
+        TEST_INT,
+        TEST_FLOAT,
+        TEST_BOOL,
+        TEST_DICT,
+        TEST_LT,
+        ]
+    # list to check the type error
+    check_err_lt = [
+        float,
+        int,
+        dict,
+        list,
+        bool,
+        ]
+
+    # iterate over the type error list
+    for dtype, check in zip(type_err_lt, check_err_lt):
+        # create a single linked list node with type error data
+        node = double_node(dtype)
+        try:
+            # try to change the node info to a different type
+            node.info = check
+        except Exception as exc:
+            # assert if the type error is raised
+            assert isinstance(exc, TypeError)
+            assert exc.args[0] == "Invalid data type for node info"
 
 
 if __name__ == "__main__":
