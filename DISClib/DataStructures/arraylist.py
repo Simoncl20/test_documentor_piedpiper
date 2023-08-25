@@ -24,11 +24,31 @@
  *
  """
 
-
 import config
 from DISClib.Utils import error as error
 import csv
+# import dataclass for defining the node type
+from dataclasses import dataclass
+# import typing for defining the type of the element stored at the node
+from typing import Generic, TypeVar, Optional, List, Callable
 assert config
+
+
+# Type for the element stored at the node
+T = TypeVar("T")    # T can be any type
+
+# valid data types for the node
+VALID_DATA_TYPE_LT = [
+    int,
+    float,
+    str,
+    bool,
+    dict,
+    list,
+    tuple,
+    set,
+    dataclass,
+]
 
 """
   Este módulo implementa una estructura de datos lineal,
@@ -39,6 +59,30 @@ assert config
   propuesta por R.Sedgewick y Kevin Wayne en su libro
   Algorithms, 4th Edition
 """
+
+
+def default_cmp_function(id1, id2):
+    if id1 > id2:
+        return 1
+    elif id1 < id2:
+        return -1
+    return 0
+
+
+@dataclass
+class array_list(Generic[T]):
+    elements: List[T]  # Use List[T] to indicate a list of elements of type T
+    size: int = 0
+    type: str = "ARRAY_LIST"
+    cmp_function: Optional[Callable[[T, T], int]] = default_cmp_function
+    key: Optional[str] = None
+    datastructure: Optional[str] = None
+
+
+
+
+
+
 
 #TODO Eliminar la carga de datos de la función newList
 #FIXME Cambiar el nombre de la funcion para usar snake_case
