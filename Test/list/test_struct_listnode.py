@@ -52,8 +52,8 @@ def test_single_node():
     node = single_node(TEST_STR)
     # assert that the node data is not None
     assert node.info == TEST_STR
-    # assert that the node _next is None or a single_node
-    assert node._next is None or isinstance(node._next, single_node)
+    # assert that the node get_next() is None or a single_node
+    assert node.get_next() is None or isinstance(node.get_next(), single_node)
 
 
 def test_double_node():
@@ -63,10 +63,10 @@ def test_double_node():
     node = double_node(TEST_STR)
     # assert that the node data is not None
     assert node.info == TEST_STR
-    # assert that the node _next is None or a double_node
-    assert node._next is None or isinstance(node._next, double_node)
-    # assert that the node _prev is None or a double_node
-    assert node._prev is None or isinstance(node._prev, double_node)
+    # assert that the node get_next() is None or a double_node
+    assert node.get_next() is None or isinstance(node.get_next(), double_node)
+    # assert that the node get_prev() is None or a double_node
+    assert node.get_prev() is None or isinstance(node.get_prev(), double_node)
 
 
 def test_get_element():
@@ -75,7 +75,7 @@ def test_get_element():
     # create a single linked list node
     node = single_node(TEST_STR)
     # get the node data with class function
-    data = node.get_element()
+    data = get_element(node)
     # assert that the node data is not None
     assert data == TEST_STR
     # assert that the data can be retrieved with the get_element function
@@ -100,8 +100,8 @@ def test_single_node_type():
     assert isinstance(node, single_node)
     # assert that the node info is an int
     assert isinstance(node.info, int)
-    # assert the node _next reference is None
-    assert node._next is None or isinstance(node._next, single_node)
+    # assert the node get_next() reference is None
+    assert node.get_next() is None or isinstance(node.get_next(), single_node)
 
     # TESTING WITH FLOAT
     # create a single_node with float info
@@ -132,8 +132,8 @@ def test_single_node_type():
     for key in TEST_DICT.keys():
         assert key in node.info.keys()
         assert isinstance(node.info[key], type(TEST_DICT[key]))
-    # assert the node _next reference is None
-    assert node._next is None or isinstance(node._next, single_node)
+    # assert the node get_next() reference is None
+    assert node.get_next() is None or isinstance(node.get_next(), single_node)
 
     # TESTING WITH LIST
     # create a single_node with list info
@@ -156,9 +156,9 @@ def test_double_node_type():
     assert isinstance(node, double_node)
     # assert that the node info is an int
     assert isinstance(node.info, int)
-    # assert the node _next reference is None
-    assert node._next is None or isinstance(node._next, double_node)
-    assert node._prev is None or isinstance(node._prev, double_node)
+    # assert the node get_next() reference is None
+    assert node.get_next() is None or isinstance(node.get_next(), double_node)
+    assert node.get_prev() is None or isinstance(node.get_prev(), double_node)
 
     # TESTING WITH FLOAT
     # create a double_node with float info
@@ -189,9 +189,9 @@ def test_double_node_type():
     for key in TEST_DICT.keys():
         assert key in node.info.keys()
         assert isinstance(node.info[key], type(TEST_DICT[key]))
-    # assert the node _next reference is None
-    assert node._next is None or isinstance(node._next, double_node)
-    assert node._prev is None or isinstance(node._prev, double_node)
+    # assert the node get_next() reference is None
+    assert node.get_next() is None or isinstance(node.get_next(), double_node)
+    assert node.get_prev() is None or isinstance(node.get_prev(), double_node)
 
     # TESTING WITH LIST
     # create a double_node with list info
@@ -209,12 +209,13 @@ def test_single_node_ref():
     # create two different single linked list nodes
     node_a = single_node(TEST_STR)
     node_b = single_node("Hello Next Node!")
-    # assigning node_a _next reference to node_b
+    # assigning node_a get_next() reference to node_b
     node_a._next = node_b
-    # assert that node_a _next reference is node_b
-    assert node_a._next == node_b
-    # assert that node_b _next reference is None or a single_node
-    assert node_b._next is None or isinstance(node_b._next, single_node)
+    # assert that node_a get_next() reference is node_b
+    assert node_a.get_next() == node_b
+    # assert that node_b get_next() reference is None or a single_node
+    sll_instance = isinstance(node_b.get_next(), single_node)
+    assert node_b.get_next() is None or sll_instance
 
 
 def test_double_node_ref():
@@ -229,14 +230,14 @@ def test_double_node_ref():
     node_a._next = node_b
     # assigning node_b _prev reference to node_c
     node_a._prev = node_c
-    # assert that node_a _next reference is node_b
-    assert node_a._next == node_b
-    # assert that node_b _prev reference is node_c
-    assert node_a._prev == node_c
-    # assert that node_b _next reference is None or a double_node
-    assert node_a._next is None or node_a._next == node_b
-    # assert that node_c _prev reference is None or a double_node
-    assert node_a._prev is None or node_a._prev == node_c
+    # assert that node_a get_next() reference is node_b
+    assert node_a.get_next() == node_b
+    # assert that node_b get_prev() reference is node_c
+    assert node_a.get_prev() == node_c
+    # assert that node_b get_next() reference is None or a double_node
+    assert node_a.get_next() is None or node_a.get_next() == node_b
+    # assert that node_c get_prev() reference is None or a double_node
+    assert node_a.get_prev() is None or node_a.get_prev() == node_c
 
 
 def test_single_node_typerr():

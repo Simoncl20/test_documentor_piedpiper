@@ -28,9 +28,10 @@ import config
 from DISClib.Utils import error as error
 import csv
 # import dataclass for defining the node type
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 # import typing for defining the type of the element stored at the node
 from typing import Generic, TypeVar, Optional, List, Callable
+import inspect
 assert config
 
 
@@ -66,23 +67,105 @@ def default_cmp_function(id1, id2):
         return 1
     elif id1 < id2:
         return -1
-    return 0
+    elif id1 == id2:
+        return 0
+    else:
+        raise Exception("Invalid comparison")
 
 
 @dataclass
 class array_list(Generic[T]):
-    elements: List[T]  # Use List[T] to indicate a list of elements of type T
-    size: int = 0
+    """array_list _summary_
+
+    Args:
+        Generic (_type_): _description_
+    """
+    # using default_factory to generate an empty list
+    elements: List[T] = field(default_factory=list)
+    _size: int = 0
     type: str = "ARRAY_LIST"
+    # using a default_cmp_function to compare elements
     cmp_function: Optional[Callable[[T, T], int]] = default_cmp_function
     key: Optional[str] = None
-    datastructure: Optional[str] = None
+    data_struct: Optional[str] = None
+    
+    def __post_init__(self):
+        pass
+    
+    def _handle_error(self, exp, msg):
+        pass
+
+    def add_first(self, element: T):
+        try:
+            self.elements.insert(0, element)
+            self._size += 1
+        except Exception as exp:
+            error.reraise(exp, 'arraylist->addFirst: ')
+
+    def add_last(self, element: T):
+        pass
+
+    def is_empty(self):
+        pass
+
+    def size(self):
+        pass
+
+    def first_element(self):
+        pass
+
+    def last_element(self):
+        pass
+
+    def get_element(self, pos: int):
+        pass
+
+    def delete_element(self, pos: int):
+        pass
+
+    def remove_first(self):
+        pass
+
+    def remove_last(self):
+        pass
+
+    def insert_element(self, element: T, pos: int):
+        pass
+
+    def is_present(self, element: T):
+        pass
+
+    def change_info(self, pos: int, new_info: T):
+        pass
+
+    def exchange(self, pos1: int, pos2: int):
+        pass
+
+    def sub_list(self, pos: int, num_elem: int):
+        pass
+
+    def iterator(self):
+        pass
+
+    def compare_elements(self, element: T, info: T):
+        pass
 
 
+def concat_lists(lst1: array_list[T], lst2: array_list[T]):
+    pass
+    
+    
 
+      
+    
+    
 
+if __name__ == "__main__":
 
-
+    a = array_list()
+    print(type(a))
+    print(type(a.elements))
+    print(inspect.getmembers(__name__))
 
 #TODO Eliminar la carga de datos de la función newList
 #FIXME Cambiar el nombre de la funcion para usar snake_case
@@ -105,6 +188,7 @@ def newList(cmpfunction, module, key, filename, delim):
                'cmpfunction': cmpfunction,
                'key': key,
                'datastructure': module
+
                }
 
     if(cmpfunction is None):

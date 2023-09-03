@@ -28,10 +28,14 @@ TYPE_ERR_MSG = "Invalid data type for node info"
 class single_node(Generic[T]):
     """single_node _summary_
 
-    :param Generic: _description_
-    :type Generic: _type_
-    :return: _description_
-    :rtype: _type_
+    Args:
+        Generic (_type_): _description_
+
+    Raises:
+        TypeError: _description_
+
+    Returns:
+        _type_: _description_
     """
     info: T
     _next: Optional["single_node[T]"] = None
@@ -41,24 +45,29 @@ class single_node(Generic[T]):
         if not any(isinstance(self.info, t) for t in valid_types):
             raise TypeError("Single Linked List Node: " + TYPE_ERR_MSG)
 
-    def get_element(self) -> T:
-        """get_element _summary_
+    def get_next(self) -> Optional["single_node[T]"]:
+        """get_next _summary_
 
-        :return: _description_
-        :rtype: T
+        Returns:
+            Optional["single_node[T]"]: _description_
         """
-        return self.info
+        return self._next
 
 
 @dataclass
 class double_node(Generic[T]):
     """double_node _summary_
 
-    :param Generic: _description_
-    :type Generic: _type_
-    :return: _description_
-    :rtype: _type_
-    """
+    Args:
+        Generic (_type_): _description_
+
+    Raises:
+        TypeError: _description_
+
+    Returns:
+        _type_: _description_
+    """    
+
     info: T
     _next: Optional["double_node[T]"] = None
     _prev: Optional["double_node[T]"] = None
@@ -75,14 +84,31 @@ class double_node(Generic[T]):
         valid_types = VALID_DATA_TYPE_LT
         if not any(isinstance(self.info, t) for t in valid_types):
             raise TypeError("Double Linked List Node: " + TYPE_ERR_MSG)
+        
+    def get_next(self) -> Optional["double_node[T]"]:
+        """get_next _summary_
+
+        Returns:
+            _type_: _description_
+        """
+        return self._next
+    
+    def get_prev(self) -> Optional["double_node[T]"]:
+        """get_prev _summary_
+
+        Returns:
+            _type_: _description_
+        """
+        return self._prev
 
 
 def get_element(node: single_node[T] | double_node[T]) -> T:
     """get_element _summary_
 
-    :param node: _description_
-    :type node: single_node[T] | double_node[T]
-    :return: _description_
-    :rtype: T
+    Args:
+        node (single_node[T] | double_node[T]): _description_
+
+    Returns:
+        T: _description_
     """
     return node.info
