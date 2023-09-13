@@ -1,0 +1,9 @@
+documentor
+build  
+documentor_dev         
+tree-sitter-python  
+__pycache__
+.txt
+.md
+.yml
+__init__.py
